@@ -9,9 +9,9 @@ A bundle which provides helper classes and commands to run DB vendor's utilities
 Installation
 ------------
 
-You can install de bundle as usual. First you clone the repo of the bundle: ::
+You can install the bundle as usual. First you clone the repo of the bundle: ::
 
-    git clone git://github.com/comfortablynumb/BackupRestoreBundle.git src/ENC/Bundle/BackupRestoreBundle
+    git clone git://github.com/comfortablynumb/BackupRestoreBundle.git vendor/bundles/ENC/Bundle/BackupRestoreBundle
 
 Then add the path to the ENC folder in your autoload.php: ::
 
@@ -19,7 +19,7 @@ Then add the path to the ENC folder in your autoload.php: ::
     $loader->registerNamespaces(array(
         // Rest of bundles..
         
-        'ENC' => __DIR__.'/../src'
+        'ENC' => __DIR__.'/../vendor/bundles'
     ));
     
 Register the bundle in your AppKernel.php: ::
