@@ -9,7 +9,7 @@ A bundle which provides helper classes and commands to run DB vendor's utilities
 Backups
 -------
 
-In order to make a backup you have two choices. First you can run a simple command: ::
+To make a backup you have two choices. First you can run a simple command: ::
 
     php app/console_dev database:backup "your-service-connection-id" "path/destination/for/generated/sql" "optional_filename.sql"
 
@@ -21,7 +21,7 @@ The other option is to make a backup from PHP: ::
 
     $factory = $container->get('backup_restore.factory');
     $backupInstance = $factory->getBackupInstance($myConnectionServiceId);
-    $backupInstance('/var/backups', 'new_backup.sql');
+    $backupInstance->backupDatabase('/var/backups', 'new_backup.sql');
 
 Restore
 -------
@@ -34,7 +34,39 @@ Or from PHP: ::
 
     $factory = $container->get('backup_restore.factory');
     $restoreInstance = $factory->getRestoreInstance($myConnectionServiceId);
-    $restoreInstance('/path/to/backup_file.sql');
+    $restoreInstance->restoreDatabase('/path/to/backup_file.sql');
+
+MongoDB notes
+--------------
+
+Backup:
+#######
+
+Making a backup for MongoDB just needs a different approach. You need only the directory to which the backup will be deployed. The utility used for this 
+action is "mongodump", which creates a directory named "dump" with the backup. You just need to pass a directory path where this backup will be created: ::
+
+    php app/console_dev database:backup "your-mongodb-service-connection-id" "/var/backups"
+
+Or in PHP: ::
+
+    $factory = $container->get('backup_restore.factory');
+    $backupInstance = $factory->getBackupInstance($myMongoDBConnectionServiceId);
+    
+    // Note that the file argument is not used!
+    $backupInstance->backupDatabase('/var/backups');
+
+Restore:
+########
+
+The same goes for the restore action. Instead of a file, you need to pass the path to the directory containing the backup: ::
+
+    php app/console_dev database:restore "your-mongodb-service-connection-id" "/path/to/backup_dir_of_mongodb"
+
+Or from PHP: ::
+
+    $factory = $container->get('backup_restore.factory');
+    $restoreInstance = $factory->getRestoreInstance($myMongoDBConnectionServiceId);
+    $restoreInstance->restoreDatabase('/path/to/backup_dir_of_mongodb');
 
 TODO
 ----
