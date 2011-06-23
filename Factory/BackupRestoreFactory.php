@@ -35,7 +35,7 @@ class BackupRestoreFactory implements BackupRestoreFactoryInterface
                 throw new UnsupportedDbalPlatformException('The database platform selected for this DBAL connection is not yet supported for this bundle.');
             }
         } else if ($connection instanceof \Doctrine\MongoDB\Connection) {
-            throw new UnsupportedPlatformException('The database platform selected is not yet supported for this bundle.');
+            return new Backup\MongoDB\MongoDBBackup($connection);
         } else {
             throw new UnsupportedPlatformException('The database platform selected is not yet supported for this bundle.');
         }
@@ -56,7 +56,7 @@ class BackupRestoreFactory implements BackupRestoreFactoryInterface
                 throw new UnsupportedDbalPlatformException('The database platform selected for this DBAL connection is not yet supported for this bundle.');
             }
         } else if ($connection instanceof \Doctrine\MongoDB\Connection) {
-            throw new UnsupportedPlatformException('The database platform selected is not yet supported for this bundle.');
+            return new Restore\MongoDB\MongoDBRestore($connection);
         } else {
             throw new UnsupportedPlatformException('The database platform selected is not yet supported for this bundle.');
         }

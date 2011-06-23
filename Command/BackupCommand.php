@@ -47,8 +47,7 @@ EOT
         $backupPath = $backupInstance->backupDatabase($directory, $fileName);
         
         $connection = $container->get($connectionServiceId);
-        $databaseName = $connection->getDatabase();
         
-        $output->writeln(sprintf('<comment>></comment> <info>Backup was successfully created in "%s" for database "%s".</info>', $backupPath, $databaseName));
+        $output->writeln(sprintf('<comment>></comment> <info>Backup was successfully created in "%s".</info>', $backupPath));
     }
 }

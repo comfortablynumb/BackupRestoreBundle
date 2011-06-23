@@ -44,8 +44,7 @@ EOT
         $restoreInstance->restoreDatabase($file);
         
         $connection = $container->get($connectionServiceId);
-        $databaseName = $connection->getDatabase();
         
-        $output->writeln(sprintf('<comment>></comment> <info>Database "%s" was restored successfully.</info>', $databaseName));
+        $output->writeln('<comment>></comment> <info>Database was restored successfully.</info>');
     }
 }
