@@ -12,7 +12,7 @@ In order to make a backup you have two choices. First you can run a simple comma
 
     php app/console_dev database:backup "your-service-connection-id" "path/destination/for/generated/sql" "optional_filename.sql"
 
-For example:::
+For example: ::
 
     php app/console_dev database:backup "doctrine.dbal.default_connection" "/var/backups" "new_backup.sql"
 
