@@ -6,8 +6,11 @@ A bundle which provides helper classes and commands to run DB vendor's utilities
 * MySQL
 * MongoDB
 
-Backups
--------
+SQL Databases
+-------------
+
+Backup:
+#######
 
 To make a backup you have two choices. First you can run a simple command: ::
 
@@ -23,8 +26,8 @@ The other option is to make a backup from PHP: ::
     $backupInstance = $factory->getBackupInstance($myConnectionServiceId);
     $backupInstance->backupDatabase('/var/backups', 'new_backup.sql');
 
-Restore
--------
+Restore:
+########
 
 To make a restore from a SQL file you have two choices too. Running a command: ::
 
@@ -36,8 +39,8 @@ Or from PHP: ::
     $restoreInstance = $factory->getRestoreInstance($myConnectionServiceId);
     $restoreInstance->restoreDatabase('/path/to/backup_file.sql');
 
-MongoDB notes
---------------
+MongoDB
+-------
 
 Backup:
 #######
