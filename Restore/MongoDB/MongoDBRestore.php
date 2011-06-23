@@ -1,7 +1,7 @@
 <?php
 namespace ENC\Bundle\BackupRestoreBundle\Restore\MongoDB;
 
-use ENC\Bundle\BackupRestoreBundle\Common\MongoDB\MongoDBUtil;
+use ENC\Bundle\BackupRestoreBundle\Common\MongoDB\MongoDBUtility;
 use ENC\Bundle\BackupRestoreBundle\Restore\AbstractRestore;
 use ENC\Bundle\BackupRestoreBundle\Exception\RestoreException;
 
@@ -13,7 +13,7 @@ class MongoDBRestore extends AbstractRestore
     {
         parent::__construct($connection);
         
-        $this->utility = new MongoDBUtil();
+        $this->utility = new MongoDBUtility();
     }
     
     public function restoreDatabase($directory)

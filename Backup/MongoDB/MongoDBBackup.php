@@ -1,7 +1,7 @@
 <?php
 namespace ENC\Bundle\BackupRestoreBundle\Backup\MongoDB;
 
-use ENC\Bundle\BackupRestoreBundle\Common\MongoDB\MongoDBUtil;
+use ENC\Bundle\BackupRestoreBundle\Common\MongoDB\MongoDBUtility;
 use ENC\Bundle\BackupRestoreBundle\Backup\AbstractBackup;
 use ENC\Bundle\BackupRestoreBundle\Exception\BackupException;
 
@@ -13,7 +13,7 @@ class MongoDBBackup extends AbstractBackup
     {
         parent::__construct($connection);
         
-        $this->utility = new MongoDBUtil();
+        $this->utility = new MongoDBUtility();
     }
     
     public function backupDatabase($targetDirectory, $fileName = null)
@@ -21,8 +21,7 @@ class MongoDBBackup extends AbstractBackup
         if (!is_dir($targetDirectory)) {
             throw new \InvalidArgumentException(sprintf('Directory "%s" is not valid or it doesn\'t exist.', $targetDirectory));
         }
-        
-        $connection	= $this->getConnection();
+
         $targetDirectory .= '/dump';
         
         $this->callVendorBackupTool($targetDirectory);

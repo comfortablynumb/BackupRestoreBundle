@@ -18,6 +18,10 @@ class TestBackupFactory extends WebTestCase
                 $constructorArguments = empty($constructorArguments) ? array(self::getDbalConnectionMock()) : $constructorArguments;
                 
                 return $instance->getMock('ENC\Bundle\BackupRestoreBundle\Backup\Mysql\MysqlBackup', $methods, $constructorArguments, '');
+            case 'mongodb':
+                $constructorArguments = empty($constructorArguments) ? array(self::getMongoDBConnectionMock()) : $constructorArguments;
+                
+                return $instance->getMock('ENC\Bundle\BackupRestoreBundle\Backup\MongoDB\MongoDBBackup', $methods, $constructorArguments, '');
             default:
                 throw new \InvalidArgumentException(sprintf('"%s" is not a valid database platform or is not supported by this bundle.', $platform));
                 
@@ -30,5 +34,12 @@ class TestBackupFactory extends WebTestCase
         $instance = new self();
         
         return $instance->getMock('Doctrine\DBAL\Connection', $methods, array(), '', false);
+    }
+    
+    public static function getMongoDBConnectionMock(array $methods = array())
+    {
+        $instance = new self();
+        
+        return $instance->getMock('Doctrine\MongoDB\Connection', $methods, array(), '', false);
     }
 }
