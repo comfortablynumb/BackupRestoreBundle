@@ -4,6 +4,7 @@ BackupRestoreBundle
 A bundle which provides helper classes and commands to run DB vendor's utilities to backup and restore databases. For now the following DB vendors are implemented:
 
 * MySQL
+* MongoDB
 
 Backups
 -------
@@ -39,3 +40,4 @@ TODO
 ----
 
 * Implement more DB vendor's utilities
+* More Unit Tests
