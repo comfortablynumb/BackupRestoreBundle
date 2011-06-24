@@ -30,7 +30,7 @@ class BackupRestoreFactory implements BackupRestoreFactoryInterface
             $platform = $connection->getDatabasePlatform();
             
             if ($platform instanceof \Doctrine\DBAL\Platforms\MysqlPlatform) {
-                return new Backup\Mysql\MysqlBackup($connection);
+                return new Backup\MySql\MySqlBackup($connection);
             } else {
                 throw new UnsupportedDbalPlatformException('The database platform selected for this DBAL connection is not yet supported for this bundle.');
             }
@@ -51,7 +51,7 @@ class BackupRestoreFactory implements BackupRestoreFactoryInterface
             $platform = $connection->getDatabasePlatform();
             
             if ($platform instanceof \Doctrine\DBAL\Platforms\MysqlPlatform) {
-                return new Restore\Mysql\MysqlRestore($connection);
+                return new Restore\MySql\MySqlRestore($connection);
             } else {
                 throw new UnsupportedDbalPlatformException('The database platform selected for this DBAL connection is not yet supported for this bundle.');
             }

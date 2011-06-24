@@ -1,10 +1,10 @@
 <?php
-namespace ENC\Bundle\BackupRestoreBundle\Tests\Restore\Mysql;
+namespace ENC\Bundle\BackupRestoreBundle\Tests\Restore\MySql;
 
 use ENC\Bundle\BackupRestoreBundle\Tests\Restore\TestRestoreFactory;
 use ENC\Bundle\BackupRestoreBundle\Exception\FileException;
 
-class MysqlRestoreTest extends \PHPUnit_Framework_TestCase
+class MySqlRestoreTest extends \PHPUnit_Framework_TestCase
 {
     protected $tmpFile;
     

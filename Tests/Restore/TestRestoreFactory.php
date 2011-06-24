@@ -16,7 +16,7 @@ class TestRestoreFactory extends WebTestCase
             case 'mysql':
                 $constructorArguments = empty($constructorArguments) ? array(self::getDbalConnectionMock()) : $constructorArguments;
                 
-                return $instance->getMock('ENC\Bundle\BackupRestoreBundle\Restore\Mysql\MysqlRestore', $methods, $constructorArguments, '');
+                return $instance->getMock('ENC\Bundle\BackupRestoreBundle\Restore\MySql\MySqlRestore', $methods, $constructorArguments, '');
             default:
                 throw new \InvalidArgumentException(sprintf('"%s" is not a valid database platform or is not supported by this bundle.', $platform));
                 

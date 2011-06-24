@@ -1,10 +1,10 @@
 <?php
-namespace ENC\Bundle\BackupRestoreBundle\Backup\Mysql;
+namespace ENC\Bundle\BackupRestoreBundle\Backup\MySql;
 
 use ENC\Bundle\BackupRestoreBundle\Backup\AbstractBackup;
 use ENC\Bundle\BackupRestoreBundle\Exception\BackupException;
 
-class MysqlBackup extends AbstractBackup
+class MySqlBackup extends AbstractBackup
 {
     public function backupDatabase($targetDirectory, $fileName = null)
     {

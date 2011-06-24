@@ -17,7 +17,7 @@ class TestBackupFactory extends WebTestCase
             case 'mysql':
                 $constructorArguments = empty($constructorArguments) ? array(self::getDbalConnectionMock()) : $constructorArguments;
                 
-                return $instance->getMock('ENC\Bundle\BackupRestoreBundle\Backup\Mysql\MysqlBackup', $methods, $constructorArguments, '');
+                return $instance->getMock('ENC\Bundle\BackupRestoreBundle\Backup\MySql\MySqlBackup', $methods, $constructorArguments, '');
             case 'mongodb':
                 $constructorArguments = empty($constructorArguments) ? array(self::getMongoDBConnectionMock()) : $constructorArguments;
                 

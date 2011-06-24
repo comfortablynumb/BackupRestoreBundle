@@ -1,11 +1,11 @@
 <?php
-namespace ENC\Bundle\BackupRestoreBundle\Tests\Backup\Mysql;
+namespace ENC\Bundle\BackupRestoreBundle\Tests\Backup\MySql;
 
 use ENC\Bundle\BackupRestoreBundle\Factory\BackupRestoreFactory;
 use ENC\Bundle\BackupRestoreBundle\Tests\Backup\TestBackupFactory;
 use ENC\Bundle\BackupRestoreBundle\Tests\Factory\TestBackupFactoryFactory;
 
-class MysqlBackupTest extends \PHPUnit_Framework_TestCase
+class MySqlBackupTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @expectedException InvalidArgumentException

@@ -1,10 +1,10 @@
 <?php
-namespace ENC\Bundle\BackupRestoreBundle\Restore\Mysql;
+namespace ENC\Bundle\BackupRestoreBundle\Restore\MySql;
 
 use ENC\Bundle\BackupRestoreBundle\Restore\AbstractRestore;
 use ENC\Bundle\BackupRestoreBundle\Exception\RestoreException;
 
-class MysqlRestore extends AbstractRestore
+class MySqlRestore extends AbstractRestore
 {
     public function restoreDatabase($file)
     {
