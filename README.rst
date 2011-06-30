@@ -6,6 +6,38 @@ A bundle which provides helper classes and commands to run DB vendor's utilities
 * MySQL
 * MongoDB
 
+Installation
+------------
+
+You can install de bundle as usual. First you clone the bundle:
+
+    git clone git://github.com/comfortablynumb/BackupRestoreBundle.git src/ENC/Bundle/BackupRestoreBundle
+
+Then add 'ENC' in your autoload.php:
+
+    // autoload.php
+    $loader->registerNamespaces(array(
+        // Rest of bundles..
+        
+        'ENC' => __DIR__.'/../src'
+    ));
+    
+Register the bundle in your AppKernel.php:
+
+    // AppKernel.php
+    public function registerBundles()
+    {
+        $bundles = array(
+            // Rest of bundles..
+            new ENC\Bundle\BackupRestoreBundle\BackupRestoreBundle()
+        );
+    }
+
+And finally, add this to your config.yml:
+
+    # config.yml
+    backup_restore: ~
+
 SQL Databases
 -------------
 
