@@ -9,11 +9,11 @@ A bundle which provides helper classes and commands to run DB vendor's utilities
 Installation
 ------------
 
-You can install de bundle as usual. First you clone the bundle: ::
+You can install de bundle as usual. First you clone the repo of the bundle: ::
 
     git clone git://github.com/comfortablynumb/BackupRestoreBundle.git src/ENC/Bundle/BackupRestoreBundle
 
-Then add 'ENC' in your autoload.php: ::
+Then add the path to the ENC folder in your autoload.php: ::
 
     // autoload.php
     $loader->registerNamespaces(array(
@@ -37,6 +37,8 @@ And finally, add this to your config.yml: ::
 
     # config.yml
     backup_restore: ~
+
+Now you should be ready to go.
 
 SQL Databases
 -------------
