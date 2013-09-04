@@ -13,7 +13,6 @@ class BackupCommand extends BaseCommand
     {
         $this
             ->setName('database:backup')
-            ->setDescription('Import the worklists from csv file')
             ->addOption('connection-service-id', null, InputOption::VALUE_OPTIONAL, 'The connection service ID of the database from which you want to generate a backup sql file. (default is "doctrine.dbal.default_connection")', 'doctrine.dbal.default_connection')
             ->addOption('target-dir',            null, InputOption::VALUE_OPTIONAL, 'The directory where the backup file will be saved. (default is {root_dir}/backups)')
             ->addOption('filename',              null, InputOption::VALUE_OPTIONAL, 'The name for the backup file.')
