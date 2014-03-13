@@ -17,7 +17,7 @@
     },
 
     "autoload": {
-        "psr-0": { "ENC\\Bundle\BackupRestoreBundle": "" }
+        "psr-0": { "ENC\\Bundle\\BackupRestoreBundle": "" }
     },
     "target-dir": "ENC/Bundle/BackupRestoreBundle"
 }
