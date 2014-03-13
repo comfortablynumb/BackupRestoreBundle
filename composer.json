@@ -1,0 +1,23 @@
+{
+    "name": "comfortablynumb/backup-restore-bundle",
+    "type": "symfony-bundle",
+    "description": "Backup and Restore helper classes to run DB vendor's utilities for such tasks",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gustavo Falco",
+            "email": ""
+        }
+    ],
+
+    "require": {
+        "php": ">=5.3.3",
+        "ext-mcrypt": "*",
+        "doctrine/dbal": ">=2.0"
+    },
+
+    "autoload": {
+        "psr-0": { "ENC\\Bundle\BackupRestoreBundle": "" }
+    },
+    "target-dir": "ENC/Bundle/BackupRestoreBundle"
+}
