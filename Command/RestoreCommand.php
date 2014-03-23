@@ -13,10 +13,8 @@ class RestoreCommand extends BaseCommand
     {
         $this
             ->setName('database:restore')
-            ->setDefinition(array(
-                new InputArgument('connection-service-id', InputArgument::REQUIRED, 'The connection service ID of the database to which you want to put the restored data.'),
-                new InputArgument('file', InputArgument::REQUIRED, 'The file to restore with.')
-            ))
+            ->addOption('connection-service-id', null, InputOption::VALUE_OPTIONAL, 'The connection service ID of the database  to which you want to put the restored data. (default is "doctrine.dbal.default_connection")', 'doctrine.dbal.default_connection')
+            ->addArgument('file', InputArgument::REQUIRED, 'The file to restore with.')
             ->setHelp(<<<EOT
 The <info>database:restore</info> command restores a database using 
 a file, presumably created with the command "database:backup" from 
@@ -36,7 +34,7 @@ EOT
         $container = $this->getContainer();
         
         $factory = $container->get('backup_restore.factory');
-        $connectionServiceId = $input->getArgument('connection-service-id');
+        $connectionServiceId = $input->getOption('connection-service-id');
         $file = $input->getArgument('file');
         
         $restoreInstance = $factory->getRestoreInstance($connectionServiceId);
